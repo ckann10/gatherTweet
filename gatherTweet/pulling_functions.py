@@ -200,7 +200,7 @@ class pulling_functions:
                 layer1_ids = self.get_ids(temp_dir + '/Core') 
                 print("# of users in Core: "  + str(len(layer1_ids)))
             if 'CoreTimeline' in files:
-                l_ids = self.get_ids(temp_dir + 'CoreTimeline')
+                l_ids = self.get_ids(temp_dir + '/CoreTimeline')
                 print("# of users already collected: "  + str(len(l_ids)))
     
             layer1_ids = layer1_ids.difference(l_ids)

@@ -38,7 +38,3 @@ BLM.pull.get_tweets(BLM,types = ['Core', 'CoreTimeline'])
 count = BLM.check.number_of_tweets(BLM.activities, users = ['Core'], base_directory=BLM.base_directory, timeline = True)
 print('Collected ' + str(count) + ' Tweets from the Core')
 
-
-
-
-

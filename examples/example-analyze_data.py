@@ -40,5 +40,3 @@ BLM.read.read_tweets_basic(BLM, users = "CoreTimeline")
 BLM.read.wrap_csv_basic(BLM, users = "CoreTimeline")
 
 
-
-
