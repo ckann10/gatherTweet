@@ -189,7 +189,10 @@ class TwitterEvent:
             if ('analysis' not in sep) & ('.DS_Store' not in sep) & (os.path.isdir(self.base_directory + '/' + sep) == True):
                 for activity in os.listdir(self.base_directory + '/' + sep):
                     if ('analysis' not in activity) & ('.DS_Store' not in activity):
-                        e = TwitterActivity(activity, 0, 0, sep, 0, (activity.split(sep + '_')[1].replace("_", " ")), 0)
+                        dt = activity.split("_")[1].split("-")
+                        e = TwitterActivity(activity, 
+                                            dt[1] + ' ' + dt[0] + ' ' + dt[2] + ' 00:00:00',
+                                            0, sep, 0, (activity.split(sep + '_')[1].replace("_", " ")), 0)
                         self.add_activity(e)
                         
                     

@@ -24,6 +24,8 @@ class checking_functions:
         
     def number_of_tweets(self, activities, users, base_directory = "", separator = "CityTown", timeline = False):
         count = 0
+        people = 0
+        list_tweeters = []
         if timeline:
             ty = ['Timeline', '']
         else:
@@ -33,14 +35,28 @@ class checking_functions:
             for t in ty:
                 for user in users:
                     path = base_directory +'/' + sep_value  + "/" + sep_value + "_" + activity['Date'].replace(" ", "-") + '/' + user + t
-                    for files in os.listdir(path):
-                        if search('twitter', files):
-                            with open(path + '/' + files) as f:
-                                file_content = f.read()
-                            data = json.loads(file_content)
-                            count += len(data)
-        return count
-                            
+                    if (t == ''):
+                        if (user != 'Core'):
+                            for files in os.listdir(path):
+                                with open(path + '/' + files) as f:
+                                    file_content = f.readlines()
+                                people += len(set(file_content))
+                        else: 
+                            for files in os.listdir(path):
+                                if search('twitter', files):
+                                    with open(path + '/' + files) as f:
+                                        file_content = f.read()
+                                    data = json.loads(file_content)
+                                    list_tweeters = list_tweeters + [x['author_id'] for x in data]
+                    else:
+                        for files in os.listdir(path):
+                            if search('twitter', files):
+                                with open(path + '/' + files) as f:
+                                    file_content = f.read()
+                                data = json.loads(file_content)
+                                count += len(data)
+        people += len(set(list_tweeters))
+        return (people, count)                            
                                 
                             
                         
