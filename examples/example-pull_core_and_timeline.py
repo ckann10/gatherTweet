@@ -8,14 +8,28 @@ gatherNet package. A TwitterEvent object is created using the
 event_template.xlsx file. This object is than populated with the Core and 
 Core timeline information.
 
+Copyright (C) 2022 Claudia Kann
 
-@author: claudiakann
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 __title__ = 'gatherTweet'
 __version__ = '1.0'
-__author__ = 'ckann10'
-__license__ = 'claudiakann'
-__copyright__ = 'Copyright 2022 ckann10'
+__author__ = 'Claudia Kann'
+__license__ = 'GPL-3'
+__copyright__ = 'Copyright 2022 Claudia Kann'
+__contact__ = 'ckann@caltech.edu'
+
 
 import os
 import gatherTweet as tw
